@@ -1,0 +1,240 @@
+/* Landing Page Animations */
+@keyframes matrix-fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-1px); }
+  20% { transform: translateX(1px); }
+  30% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.6);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes data-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(0, 255, 0, 0.1) 50%, 
+    transparent 100%);
+  animation: matrix-fall 20s linear infinite;
+}
+
+.glitch-text {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.8s ease-out;
+}
+
+.data-pulse {
+  animation: data-pulse 2s ease-in-out infinite;
+}
+
+/* Landing page specific styles */
+.landing-feature-card {
+  transition: all 0.3s ease;
+}
+
+.landing-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2);
+}
+
+.cta-button {
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+}
+
+.terms-checkbox {
+  accent-color: #10b981;
+}
+
+.terms-checkbox:checked {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+/* Analytics Dashboard Styles */
+.analytics-dashboard {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.analytics-dashboard.fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cyber-panel {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cyber-panel:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Metric card animations */
+.metric-card {
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 0, 0.15);
+}
+
+/* Progress bar animations */
+.progress-bar {
+  transition: width 1s ease-out;
+}
+
+/* Activity feed animations */
+.activity-item {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .analytics-dashboard {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Analytics Dashboard Number Fitting */
+.metric-card .data-pulse {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.2;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 1024px) {
+  .metric-card .data-pulse {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .metric-card .data-pulse {
+    font-size: 1.25rem;
+  }
+}
+
+/* Ensure numbers don't overflow */
+.metric-card {
+  overflow: hidden;
+}
+
+.metric-card > div:first-child {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Better spacing for smaller screens */
+@media (max-width: 768px) {
+  .cyber-panel {
+    padding: 1rem;
+  }
+  
+  .metric-card {
+    padding: 0.75rem;
+  }
+  
+  .metric-card .data-pulse {
+    font-size: 1rem;
+  }
+} 

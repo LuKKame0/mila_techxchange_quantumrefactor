@@ -1,0 +1,5 @@
+{
+  "name": "QuantumRefactor Auditor",
+  "description": "An AI-powered cyber-assessor that examines web applications for post-quantum security resilience. Enter a URL to receive a detailed, technically rigorous assessment of the site's preparedness for the quantum computing era.",
+  "requestFramePermissions": []
+}
